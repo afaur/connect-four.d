@@ -1,8 +1,9 @@
 import std.stdio;
 import std.conv;
+import std.array;
+import std.algorithm.sorting;
 import std.algorithm.iteration;
-import std.algorithm.mutation : copy;
-import std.algorithm.comparison : equal;
+import std.functional;
 import colorize : fg, color, cwriteln, cwritefln;
 
 class Board {
@@ -65,12 +66,14 @@ class Board {
   }
 
   bool point_won(int row, int column) {
-    foreach (int[] items; possible_wins(row, column)) {
-      assert(equal(uniq(items), [1]));
+    // http://forum.dlang.org/post/pnyxbdjzyutmdgsxnxtr@forum.dlang.org
+    auto test = possible_wins(row, column).sort!("a[1] < b[1]").uniq!("a[1] == b[1]").array;
+    //foreach (int[] items; possible_wins(row, column)) {
+      //assert(equal(uniq(items), [1]));
       //if (uniq(items) == 1) {
       //  return true;
       //}
-    }
+    //}
     return false;
   }
 
