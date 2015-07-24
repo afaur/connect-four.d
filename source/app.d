@@ -66,14 +66,11 @@ class Board {
   }
 
   bool point_won(int row, int column) {
-    // http://forum.dlang.org/post/pnyxbdjzyutmdgsxnxtr@forum.dlang.org
-    auto test = possible_wins(row, column).sort!("a[1] < b[1]").uniq!("a[1] == b[1]").array;
-    //foreach (int[] items; possible_wins(row, column)) {
-      //assert(equal(uniq(items), [1]));
-      //if (uniq(items) == 1) {
-      //  return true;
-      //}
-    //}
+    foreach (int[] items; possible_wins(row, column)) {
+      if (items[0] != 0 && items.uniq!("a == b").array.length == 1) {
+        return true;
+      }
+    }
     return false;
   }
 
@@ -90,10 +87,10 @@ class Board {
     end
     */
     return [
-      [1, 1, 1, 1],
-      [1, 1, 1, 1],
-      [1, 1, 1, 1],
-      [1, 1, 1, 1]
+      [0, 0, 0, 0],
+      [1, 1, 0, 1],
+      [1, 0, 1, 1],
+      [0, 1, 1, 1]
     ];
   }
 }
