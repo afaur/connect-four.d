@@ -1,0 +1,9 @@
+{
+	"name": "connect-four",
+	"description": "A minimal D application.",
+	"copyright": "Copyright © 2015, afaur",
+	"authors": ["afaur"],
+	"dependencies": {
+		"colorize": "~>1.0.5"
+	}
+}
