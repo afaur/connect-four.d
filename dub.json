@@ -4,6 +4,7 @@
 	"copyright": "Copyright © 2015, afaur",
 	"authors": ["afaur"],
 	"dependencies": {
-		"colorize": "~>1.0.5"
+		"colorize": "~>1.0.5",
+		"d-unit": ">=0.7.1"
 	}
 }
