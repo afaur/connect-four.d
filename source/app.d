@@ -1,13 +1,8 @@
+import std.stdio;
 public import board;
+import dunit;
 
-/*
-string col(string text, string colr) {
-  return text.color(colr);
-}
-*/
-
-void main()
-{
+void main() {
   auto board = new Board;
   board.play();
 }

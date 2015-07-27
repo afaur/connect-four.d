@@ -6,5 +6,17 @@
 	"dependencies": {
 		"colorize": "~>1.0.5",
 		"d-unit": ">=0.7.1"
-	}
+	},
+	"configurations": [
+		{
+			"name": "application",
+			"targetType": "executable",
+			"excludedSourceFiles": ["source/apptest.d"]
+		},
+		{
+			"name": "unittest",
+			"targetType": "executable",
+			"excludedSourceFiles": ["source/app.d"]
+		}
+	]
 }
