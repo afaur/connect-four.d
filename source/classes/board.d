@@ -8,6 +8,8 @@ import std.algorithm.iteration;
 import std.functional;
 import colorize : fg, color, cwriteln, cwritefln;
 
+import dunit.mockable;
+
 public import player;
 
 public class Board {
@@ -100,4 +102,6 @@ public class Board {
       [0, 1, 1, 1]
     ];
   }
+
+  mixin Mockable!(Board);
 }

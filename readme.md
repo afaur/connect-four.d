@@ -7,5 +7,5 @@ dub
 # Run Tests
 
 ```
-dub --config=unittest
+dub --build=unittest
 ```

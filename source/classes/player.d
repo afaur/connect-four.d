@@ -1,5 +1,7 @@
 module player;
 
+import dunit.mockable;
+
 public class Player {
 
   public string name;
@@ -11,5 +13,6 @@ public class Player {
     this.color = color;
   }
 
+  mixin Mockable!(Player);
 }
 
