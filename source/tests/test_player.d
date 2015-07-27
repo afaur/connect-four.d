@@ -11,7 +11,7 @@ class TestPlayer
   @Test
   void test_player_has_name() {
     auto player = new Player("jim", "green");
-    assertEquals(player.name, "jimmy");
+    assertEquals(player.name, "jim");
   }
 
   @Test
