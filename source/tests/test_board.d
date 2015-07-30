@@ -2,17 +2,11 @@ module test_board;
 
 public import board;
 
-import dunit;
-
-class TestBoard
+unittest
 {
-  mixin UnitTest;
+  import dunit.toolkit;
 
-  @Test
-  void test_board() {
-    auto board = new Board;
-    assertEquals(1,1);
-  }
-
+  // Test 1
+  auto board = Board.getMock();
+  assertEqual(1,1);
 }
-

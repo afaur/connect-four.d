@@ -2,21 +2,15 @@ module test_player;
 
 public import player;
 
-import dunit;
-
-class TestPlayer
+unittest
 {
-  mixin UnitTest;
+  import dunit.toolkit;
 
-  @Test
-  void test_player_has_name() {
-    auto player = new Player("jim", "green");
-    assertEquals(player.name, "jim");
-  }
+  auto player = Player.getMock("jim", "green");
 
-  @Test
-  void test_player_has_color() {
-    auto player = new Player("jim", "green");
-    assertEquals(player.color, "green");
-  }
+  // Player has name
+  assertEqual(player.name, "jim");
+
+  // Player has color
+  assertEqual(player.color, "green");
 }
